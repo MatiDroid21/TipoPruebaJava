@@ -90,6 +90,12 @@ public class Asignatura {
         return (nota1 + nota2 + nota3) / 3.0;
     }
 
+    public boolean aproboCurso(){
+        double promedio = ((nota1 + nota2 + nota3) / 3.0);
+        
+        return promedio >=4.0;
+    }
+    
     @Override
     public String toString() {
         return "=== Asignatura ==="+"\n"

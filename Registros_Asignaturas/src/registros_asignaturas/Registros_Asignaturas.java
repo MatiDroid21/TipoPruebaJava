@@ -20,15 +20,6 @@ public class Registros_Asignaturas {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-       // Alumno alumno = new Alumno("22.231.123-K", "Alexander Albon", 11, "06-06-2003");
-        //System.out.println(alumno);
-        //Docente docente = new Docente("12.456.789-K", 132322, "Max Verstappen", "20-20-2000", "No se");
-        //System.out.println(docente);
-        //Asignatura asignatura = new Asignatura("DSY1102-001V", "Programacion Orientada A Objetos", alumno, docente, 6.5, 5.5, 4.5);
-        //double notafinal = asignatura.calcularNotaFinal();
-        //System.out.println(asignatura);
-        //System.out.println("nota final "+notafinal);
-        //System.out.println("==================================================================================================");
         Alumno al = new Alumno();
         Docente doc = new Docente();
         Asignatura as = new Asignatura();
@@ -92,11 +83,23 @@ public class Registros_Asignaturas {
                     System.out.println(as);
                     System.out.println("Promedio");
                     System.out.println(as.calcularNotaFinal());
+                    // Supongamos que ya tienes el objeto 'as' (Asignatura) con las notas ingresadas
+
+                    double promedio = (as.getNota1() + as.getNota2() + as.getNota3()) / 3.0;
+
+                    if (as.aproboCurso()) {
+                        System.out.println("El alumno ha aprobado el curso con un promedio de " + String.format("%.2f", promedio));
+                    } else {
+                        System.out.println("El alumno ha reprobado el curso con un promedio de " + String.format("%.2f", promedio));
+                    }
+
+
+                    
                     break;
                 case 5:
                     System.out.println("Programa Finalizado");
                 default:
-                    System.out.println("Opcion Incorrecta");
+                    System.out.println("Error en el ingreso de opcion");
             }
         }while(opcion != 5);
         
